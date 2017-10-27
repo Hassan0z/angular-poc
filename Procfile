@@ -1,1 +1,1 @@
-web: node cli/server.js
+web: node cli/server.ts
