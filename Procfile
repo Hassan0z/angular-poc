@@ -1,1 +1,1 @@
-web: node cli/server.ts
+web: node ./cli/dist/server.js
