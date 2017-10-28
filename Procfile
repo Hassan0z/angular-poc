@@ -1,1 +1,0 @@
-web: node ./cli/dist/server.js
