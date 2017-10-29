@@ -8,7 +8,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "postinstall": "ng build --aot -prod",
+    "postinstall": "ng build",
     "start": "npm run build:dynamic && npm run serve:dynamic",
     "start:dynamic": "npm run build:dynamic && npm run serve:dynamic",
     "start:static": "npm run build:static && npm run serve:static",
@@ -17,7 +17,9 @@
     "build:static": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:static",
     "build:dynamic": "npm run build:client-and-server-bundles && npm run webpack:server",
     "generate:static": "cd dist && node prerender",
-    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
+    "serve:static": "cd dist/browser && http-server",
+    "serve:dynamic": "node dist/server"
   },
   "private": true,
   "dependencies": {
@@ -44,7 +46,8 @@
     "typescript": "~2.3.3",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "express": "4.15.2"
   },
   "engines": {
     "node": "6.11.1",
